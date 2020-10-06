@@ -51,8 +51,8 @@ function getData() {
 async function init() {
     const data = await getData();
     var randomObject = getRandomElementFromArr(data);
-    quote.innerText = randomObject.quote;
-    author.innerText = randomObject.character;
+    quote.innerText = '"' + randomObject.quote + '"';
+    author.innerText = '-' + randomObject.character;
     image.src = randomObject.image;
 
 }
