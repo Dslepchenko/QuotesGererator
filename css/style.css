@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Neue', cursive;
+}
+
+body {
+    background-color: #21a28f;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-wrapper {
+    width: 700px;
+    height: 450px;
+    margin: 0 10px;
+}
+
+.quote-wrapper .quote-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.quote-wrapper .quote-heading h2 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 70px;
+    color: rgb(209, 231, 65);
+    text-shadow: 2px 2px 4px black;
+}
+
+.quote-wrapper .quote-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 320px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.quote-wrapper .quote-body .icon-quote {
+    display: flex;
+    align-content: flex-start;
+    text-align: start;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 32px;
+    color: #22313F;
+    height: 80px;
+    /* overflow: auto; */
+}
+
+.quote-wrapper .quote-body .author {
+    text-align: right;
+    margin-top: 15px;
+    margin-bottom: 45px;
+}
+
+.quote-wrapper .quote-body .quote-buttons .btn button {
+    margin-block-start: 60px;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    background-color: rgb(209, 231, 65);
+    color: black;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quote-wrapper .quote-body .quote-buttons button:active {
+    background-color: #21a28f;
+    ;
+}
