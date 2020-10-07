@@ -9,8 +9,9 @@ const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
 const image = document.querySelector('img');
 const button = document.querySelector('#quote-btn');
+const num = 5;
 
-const getData = () => fetch('https://thesimpsonsquoteapi.glitch.me/quotes?count=5')
+const getData = () => fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=${num}`)
     .then(response => response.json())
     .then(data => data);
 
