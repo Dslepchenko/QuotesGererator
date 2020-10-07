@@ -24,11 +24,18 @@ body {
     margin-bottom: 50px;
 }
 
-.quote-wrapper .quote-heading h2 {
+.quote-wrapper .quote-heading {
     font-family: 'Comic Neue', cursive;
     font-size: 70px;
     color: rgb(209, 231, 65);
     text-shadow: 2px 2px 4px black;
+}
+
+.quote-wrapper .quote-heading h2 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 35px;
+    color: rgb(10, 10, 10);
+    text-shadow: none;
 }
 
 .quote-wrapper .quote-body {
