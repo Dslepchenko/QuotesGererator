@@ -8,77 +8,94 @@
 body {
     background-color: #21a28f;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .quote-wrapper {
-    width: 700px;
-    height: 450px;
-    margin: 0 10px;
-}
-
-.quote-wrapper .quote-heading {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: initial;
+    align-items: center;
     text-align: center;
-    margin-bottom: 50px;
-}
-
-.quote-wrapper .quote-heading {
-    font-family: 'Comic Neue', cursive;
-    font-size: 70px;
-    color: rgb(209, 231, 65);
-    text-shadow: 2px 2px 4px black;
 }
 
 .quote-wrapper .quote-heading h2 {
     font-family: 'Comic Neue', cursive;
-    font-size: 35px;
+    font-size: 26px;
     color: rgb(10, 10, 10);
-    text-shadow: none;
 }
 
-.quote-wrapper .quote-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.quote-wrapper .quote {
+    font-size: 14px;
     width: 100%;
-    height: 320px;
-    padding: 10px 20px;
-    background-color: #fff;
+    max-width: 280px;
+    color: rgb(239, 248, 69);
+    margin: 20px auto;
+    line-height: 1.5;
+    text-shadow: -0 -1px 1px #000000, 0 -1px 1px #000000, -0 1px 1px #000000, 0 1px 1px #000000, -1px -0 1px #000000, 1px -0 1px #000000, -1px 0 1px #000000, 1px 0 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000;
+}
+
+.quote-wrapper .image {
+    width: 100px;
+}
+
+.form-search {
+    /* форма с boxtuffs.com */
+    margin-top: 20px;
+    margin-left: ;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #747474;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px #575555, 0 1px 0 #FFF;
+    background-image: linear-gradient(#BCBCBC, #EBEBEB);
+}
+
+.form-search:before {
+    /* рамка вокруг формы */
+    position: absolute;
+    content: "";
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
     border-radius: 5px;
+    background: linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
 }
 
-.quote-wrapper .quote-body .icon-quote {
-    display: flex;
-    align-content: flex-start;
-    text-align: start;
-    justify-content: space-between;
-    text-align: right;
-    font-size: 32px;
-    color: #22313F;
-    height: 80px;
-    /* overflow: auto; */
+.form-search:focus-within {
+    /* изменение формы при фокусе */
+    box-shadow: inset 0 1px 1px #46575b, 0 1px 0 #FFF;
+    background: linear-gradient(#9CC2CA, #DFECEF);
 }
 
-.quote-wrapper .quote-body .author {
-    display: flex;
-    margin-top: 30px;
-}
-
-.quote-wrapper .quote-body .quote-buttons .btn button {
-    margin-block-start: 60px;
+.form-search input[type="search"] {
+    /* поле поиска */
+    width: 60px;
+    height: 32px;
+    line-height: 32px;
     border: none;
     outline: none;
-    padding: 10px 15px;
-    background-color: rgb(209, 231, 65);
-    color: black;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+    box-shadow: none;
+    padding: 0 0 0 6px;
+    background: transparent;
+    font: 13px Helvetica, Arial, sans-serif;
+    color: #6E7074;
+    text-shadow: 0 1px 0 #FFF;
+    transition: all .2s ease-out;
 }
 
-.quote-wrapper .quote-body .quote-buttons button:active {
-    background-color: #21a28f;
-    ;
+.form-search:focus-within input[type="search"],
+
+/* изменение поля поиска при фокусе */
+
+.form-search input[type="search"]:focus {
+    width: 160px;
+    color: #25464D;
+}
+
+.form-search input[type="image"] {
+    /* картинка лупы */
+    padding: 0;
+    vertical-align: bottom;
 }
