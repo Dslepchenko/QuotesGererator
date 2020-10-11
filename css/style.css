@@ -11,7 +11,7 @@ body {
 }
 
 .quote-wrapper {
-    margin-top: 50px;
+    margin: 50px 50px;
     display: flex;
     flex-direction: initial;
     align-items: center;
