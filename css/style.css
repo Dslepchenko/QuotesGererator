@@ -11,37 +11,55 @@ body {
 }
 
 .quote-wrapper {
+    position: relative;
     margin: 50px 50px;
     display: flex;
-    flex-direction: initial;
     align-items: center;
     text-align: center;
 }
 
-.quote-wrapper .quote-heading h2 {
+.quote-heading h2 {
     font-family: 'Comic Neue', cursive;
     font-size: 26px;
     color: rgb(10, 10, 10);
 }
 
-.quote-wrapper .quote {
+.quote {
     font-size: 14px;
     width: 100%;
-    max-width: 280px;
+    max-width: 350px;
     color: rgb(239, 248, 69);
     margin: 20px auto;
     line-height: 1.5;
     text-shadow: -0 -1px 1px #000000, 0 -1px 1px #000000, -0 1px 1px #000000, 0 1px 1px #000000, -1px -0 1px #000000, 1px -0 1px #000000, -1px 0 1px #000000, 1px 0 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000;
 }
 
-.quote-wrapper .image {
+.image {
     width: 100px;
 }
+
+.like {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    width: 40px;
+    height: 30px;
+    font-size: 1.3em;
+}
+
+.like.active {
+    background: #F06EA9;
+}
+
+
+/* .toggleLike :active {
+    vertical-align: middle;
+    color: #01a715;
+} */
 
 .form-search {
     /* форма с boxtuffs.com */
     margin-top: 20px;
-    margin-left: ;
     position: relative;
     display: inline-block;
     border: 1px solid #747474;

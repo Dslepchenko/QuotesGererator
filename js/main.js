@@ -1,5 +1,7 @@
 'use strict';
 
+var DATA = [];
+
 const getRandomInRange = (min, max) => Math.floor(Math.random() * (max + 1 - min) + min);
 
 const getRandomElementFromArr = (arr) => arr[getRandomInRange(0, arr.length - 1)];
@@ -24,6 +26,8 @@ const elementTepmlate = (card) => `<div class = "quote-heading hide">
     ${(getAuthorTemplate(card.character))}
     ${(getQuotesTemplate(card.quote))}
     ${(getImageTemplate(card.image))}
+    ${(geLikeTemplate(card))}
+    
     
     </div>`
 
@@ -31,10 +35,8 @@ const elementTepmlate = (card) => `<div class = "quote-heading hide">
 const getQuotesTemplate = quote => `<div class = "quote">${quote}</div>`;
 const getImageTemplate = src => `<img src=${src} class = "image">`
 const getAuthorTemplate = character => `<h2>${character}</h2>`
-
-
-var DATA = [];
-
+const geLikeTemplate = card => `<button id="${card.id}" class="like" type="button" onclick="document.getElementById('${card.id}').style.backgroundColor = 'red' ">Like!</button>`
+2
 
 
 document.querySelector('#elastic').addEventListener('input', e => {
@@ -43,8 +45,10 @@ document.querySelector('#elastic').addEventListener('input', e => {
     getFilteredCharacter(value, DATA);
     quoteWrapper.innerHTML = '';
     const newData = getFilteredCharacter(value, DATA);
+    console.log(newData);
     const renderNew = newData.map(card => elementTepmlate(card));
     createElement(renderNew, quoteWrapper);
+
 
 
 })
@@ -55,7 +59,6 @@ const getFilteredCharacter = (search, arr) => {
 
         return filter;
     })
-    console.log(filterArray)
     return filterArray;
 
 
@@ -63,10 +66,19 @@ const getFilteredCharacter = (search, arr) => {
 
 
 const init = async() => {
-    const data = await getData()
-    const result = data.map(card => elementTepmlate(card));
+    let ID = 0;
+    const data = await getData();
+
+    DATA = data.map(item => ({
+        ...item,
+        liked: false,
+        id: ++ID
+    }));
+    const result = DATA.map(card => elementTepmlate(card));
+
     createElement(result, quoteWrapper);
-    DATA = data;
+    console.log(DATA);
+
 
 }
 
