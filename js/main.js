@@ -23,6 +23,7 @@ const elementTepmlate = (card) => `<div class = "quote-heading hide">
     ${(getQuotesTemplate(card.quote))}
     ${(getImageTemplate(card.image))}
     ${(geLikeTemplate(card))}
+    ${(iconTemplate(card))}
     
     
     </div>`
@@ -31,21 +32,17 @@ const elementTepmlate = (card) => `<div class = "quote-heading hide">
 const getQuotesTemplate = quote => `<div class = "quote">${quote}</div>`;
 const getImageTemplate = src => `<img src=${src} class = "image">`
 const getAuthorTemplate = character => `<h2>${character}</h2>`
-const geLikeTemplate = card => `<div class="center">
-<i id="like-${card.id}" class="fas fa-heart" type="button" onclick="toggleLike(${card.id})">
-<span class="popover above"> I'm ${card.character}</span>
-</i>
-</div>`
+const iconTemplate = card => `<div class="center">${card.iconsData.map(icon => getPopupTemplate(card,icon)).join('')}</div>`
+const getPopupTemplate = (card, icon) => `<i id="like-${card.id}-${icon}" class="fas fa-${icon}" onclick="toggleLike(${card.id}, '${icon}')"></i>`
+const geLikeTemplate = card => `<button id="like-${card.id}" class="fas fa-heart${card.liked ? 'active' : ''}" type="button" onclick="toggleLike(${card.id})"></button>`
 
-const getSmileBox = icon => `<div class =""></div>`
-
-const iconsData = [`heart`, `smile`, `angry`];
+const iconsData = [`laugh-beam`, `smile`, `angry`];
 
 
 const toggleLike = (likeId) => {
     const needToLike = DATA.find(item => item.id === likeId)
     console.log(needToLike);
-    needToLike.liked = !needToLike.liked;
+    needToLike.icon = !needToLike.icon;
     console.log(needToLike);
     const likeButton = document.getElementById(`like-${likeId}`);
     if (needToLike.liked) {
@@ -88,7 +85,7 @@ const init = async() => {
     DATA = data.map(item => ({
         ...item,
         liked: false,
-        likes: iconsData,
+        iconsData: [`laugh-beam`, `smile`, `angry`],
         id: ++ID
     }));
     const result = DATA.map(card => elementTepmlate(card));
