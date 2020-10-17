@@ -23,7 +23,7 @@ const elementTepmlate = (card) => `<div class = "quote-heading hide">
     ${(getQuotesTemplate(card.quote))}
     ${(getImageTemplate(card.image))}
     ${(geLikeTemplate(card))}
-    ${(iconTemplate(card))}
+   
     
     
     </div>`
@@ -32,24 +32,16 @@ const elementTepmlate = (card) => `<div class = "quote-heading hide">
 const getQuotesTemplate = quote => `<div class = "quote">${quote}</div>`;
 const getImageTemplate = src => `<img src=${src} class = "image">`
 const getAuthorTemplate = character => `<h2>${character}</h2>`
-const iconTemplate = card => `<div class="center">${card.iconsData.map(icon => getPopupTemplate(card,icon)).join('')}</div>`
-const getPopupTemplate = (card, icon) => `<i id="like-${card.id}-${icon}" class="fas fa-${icon}" onclick="toggleLike(${card.id}, '${icon}')"></i>`
-const geLikeTemplate = card => `<button id="like-${card.id}" class="fas fa-heart${card.liked ? 'active' : ''}" type="button" onclick="toggleLike(${card.id})"></button>`
+    // const iconTemplate = card => `<div class="center">${card.iconsData.map(icon => getPopupTemplate(card,icon)).join('')}</div>`
+const getPopupTemplate = (card, icon) => `<i id="like-${card.id}-${icon}" class="fas fa-${icon}" onclick="toggleSmile(${card.id}, '${icon}')"></i>`
+const geLikeTemplate = card => `<button id="like-${card.id}" class="fas fa-heart${card.liked ? 'active' : ''}" type="button" onclick="toggleLike(${card.id})"><div class="center">${card.iconsData.map(icon => getPopupTemplate(card,icon)).join('')}</div></button>`
 
 const iconsData = [`laugh-beam`, `smile`, `angry`];
 
 
-const toggleLike = (likeId) => {
-    const needToLike = DATA.find(item => item.id === likeId)
-    console.log(needToLike);
-    needToLike.icon = !needToLike.icon;
-    console.log(needToLike);
-    const likeButton = document.getElementById(`like-${likeId}`);
-    if (needToLike.liked) {
-        likeButton.classList.add('active');
-    } else {
-        likeButton.classList.remove('active');
-    }
+// как заменить сердечко на олин из смайлов? добавить обработчик события?
+const toggleSmile = (likeIcon) => {
+    const hoverIcon = DATA.find(item => item.icon === likeIcon)
 }
 
 document.querySelector('#elastic').addEventListener('input', e => {
