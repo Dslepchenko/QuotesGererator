@@ -2,10 +2,6 @@
 
 var DATA = [];
 
-const getRandomInRange = (min, max) => Math.floor(Math.random() * (max + 1 - min) + min);
-
-const getRandomElementFromArr = (arr) => arr[getRandomInRange(0, arr.length - 1)];
-
 const quoteWrapper = document.querySelector('.quote-wrapper');
 
 const num = 7;
@@ -35,9 +31,29 @@ const elementTepmlate = (card) => `<div class = "quote-heading hide">
 const getQuotesTemplate = quote => `<div class = "quote">${quote}</div>`;
 const getImageTemplate = src => `<img src=${src} class = "image">`
 const getAuthorTemplate = character => `<h2>${character}</h2>`
-const geLikeTemplate = card => `<button id="${card.id}" class="like" type="button" onclick="document.getElementById('${card.id}').style.backgroundColor = 'red' ">Like!</button>`
-2
+const geLikeTemplate = card => `<div class="center">
+<i id="like-${card.id}" class="fas fa-heart" type="button" onclick="toggleLike(${card.id})">
+<span class="popover above"> I'm ${card.character}</span>
+</i>
+</div>`
 
+const getSmileBox = icon => `<div class =""></div>`
+
+const iconsData = [`heart`, `smile`, `angry`];
+
+
+const toggleLike = (likeId) => {
+    const needToLike = DATA.find(item => item.id === likeId)
+    console.log(needToLike);
+    needToLike.liked = !needToLike.liked;
+    console.log(needToLike);
+    const likeButton = document.getElementById(`like-${likeId}`);
+    if (needToLike.liked) {
+        likeButton.classList.add('active');
+    } else {
+        likeButton.classList.remove('active');
+    }
+}
 
 document.querySelector('#elastic').addEventListener('input', e => {
     e.preventDefault();
@@ -72,6 +88,7 @@ const init = async() => {
     DATA = data.map(item => ({
         ...item,
         liked: false,
+        likes: iconsData,
         id: ++ID
     }));
     const result = DATA.map(card => elementTepmlate(card));

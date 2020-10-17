@@ -1,119 +1,144 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Comic Neue', cursive;
-}
-
-body {
-    background-color: #21a28f;
-    height: 100vh;
-}
-
-.quote-wrapper {
-    position: relative;
-    margin: 50px 50px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-
-.quote-heading h2 {
-    font-family: 'Comic Neue', cursive;
-    font-size: 26px;
-    color: rgb(10, 10, 10);
-}
-
-.quote {
-    font-size: 14px;
-    width: 100%;
-    max-width: 350px;
-    color: rgb(239, 248, 69);
-    margin: 20px auto;
-    line-height: 1.5;
-    text-shadow: -0 -1px 1px #000000, 0 -1px 1px #000000, -0 1px 1px #000000, 0 1px 1px #000000, -1px -0 1px #000000, 1px -0 1px #000000, -1px 0 1px #000000, 1px 0 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000;
-}
-
-.image {
-    width: 100px;
-}
-
-.like {
-    outline: none;
-    box-shadow: none;
-    border: none;
-    width: 40px;
-    height: 30px;
-    font-size: 1.3em;
-}
-
-.like.active {
-    background: #F06EA9;
-}
-
-
-/* .toggleLike :active {
-    vertical-align: middle;
-    color: #01a715;
-} */
-
-.form-search {
-    /* форма с boxtuffs.com */
-    margin-top: 20px;
-    position: relative;
-    display: inline-block;
-    border: 1px solid #747474;
-    border-radius: 3px;
-    box-shadow: inset 0 1px 1px #575555, 0 1px 0 #FFF;
-    background-image: linear-gradient(#BCBCBC, #EBEBEB);
-}
-
-.form-search:before {
-    /* рамка вокруг формы */
-    position: absolute;
-    content: "";
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
-    z-index: -1;
-    border-radius: 5px;
-    background: linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
-}
-
-.form-search:focus-within {
-    /* изменение формы при фокусе */
-    box-shadow: inset 0 1px 1px #46575b, 0 1px 0 #FFF;
-    background: linear-gradient(#9CC2CA, #DFECEF);
-}
-
-.form-search input[type="search"] {
-    /* поле поиска */
-    width: 60px;
-    height: 32px;
-    line-height: 32px;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    padding: 0 0 0 6px;
-    background: transparent;
-    font: 13px Helvetica, Arial, sans-serif;
-    color: #6E7074;
-    text-shadow: 0 1px 0 #FFF;
-    transition: all .2s ease-out;
-}
-
-.form-search:focus-within input[type="search"],
-
-/* изменение поля поиска при фокусе */
-
-.form-search input[type="search"]:focus {
-    width: 160px;
-    color: #25464D;
-}
-
-.form-search input[type="image"] {
-    /* картинка лупы */
-    padding: 0;
-    vertical-align: bottom;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Comic Neue', cursive;
+    }
+    
+    body {
+        background-color: #21a28f;
+        height: 100vh;
+    }
+    
+    .quote-wrapper {
+        margin: 35px 35px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .quote-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .quote-heading h2 {
+        font-family: 'Comic Neue', cursive;
+        font-size: 26px;
+        color: rgb(10, 10, 10);
+    }
+    
+    .quote {
+        font-size: 14px;
+        width: 100%;
+        max-width: 350px;
+        color: rgb(239, 248, 69);
+        margin: 20px auto;
+        line-height: 1.5;
+        text-shadow: -0 -1px 1px #000000, 0 -1px 1px #000000, -0 1px 1px #000000, 0 1px 1px #000000, -1px -0 1px #000000, 1px -0 1px #000000, -1px 0 1px #000000, 1px 0 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000, -1px -1px 1px #000000, 1px -1px 1px #000000, -1px 1px 1px #000000, 1px 1px 1px #000000;
+    }
+    
+    .image {
+        flex-shrink: 3;
+        width: 100px;
+    }
+    
+    .center {
+        margin: 100px auto;
+        width: 30px;
+    }
+    
+    .fas.fa-heart {
+        margin-top: 10px;
+        font-size: 20px;
+        background: none;
+        border: none;
+        color: grey;
+        outline: none;
+        cursor: default;
+        display: inline-block;
+        position: relative;
+    }
+    /* .fas.fa-heart:hover {
+        margin-top: 10px;
+        font-size: 20px;
+        background: none;
+        border: none;
+        color: red;
+        outline: none;
+    } */
+    
+    .popover {
+        display: none;
+        background-color: ivory;
+    }
+    
+    .fas.fa-heart:hover .popover {
+        display: block;
+        position: absolute;
+        width: auto;
+        height: auto;
+    }
+    
+    .form-search {
+        /* форма с boxtuffs.com */
+        margin-top: 20px;
+        position: relative;
+        display: inline-block;
+        border: 1px solid #747474;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 1px #575555, 0 1px 0 #FFF;
+        background-image: linear-gradient(#BCBCBC, #EBEBEB);
+    }
+    
+    .form-search:before {
+        /* рамка вокруг формы */
+        position: absolute;
+        content: "";
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        z-index: -1;
+        border-radius: 5px;
+        background: linear-gradient(#D3D3D3, #CACACA 50%, #A9A9A9 50%, #9B9B9B);
+    }
+    
+    .form-search:focus-within {
+        /* изменение формы при фокусе */
+        box-shadow: inset 0 1px 1px #46575b, 0 1px 0 #FFF;
+        background: linear-gradient(#9CC2CA, #DFECEF);
+    }
+    
+    .form-search input[type="search"] {
+        /* поле поиска */
+        width: 60px;
+        height: 32px;
+        line-height: 32px;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 0 0 0 6px;
+        background: transparent;
+        font: 13px Helvetica, Arial, sans-serif;
+        color: #6E7074;
+        text-shadow: 0 1px 0 #FFF;
+        transition: all .2s ease-out;
+    }
+    
+    .form-search:focus-within input[type="search"],
+    /* изменение поля поиска при фокусе */
+    
+    .form-search input[type="search"]:focus {
+        width: 160px;
+        color: #25464D;
+    }
+    
+    .form-search input[type="image"] {
+        /* картинка лупы */
+        padding: 0;
+        vertical-align: bottom;
+    }
